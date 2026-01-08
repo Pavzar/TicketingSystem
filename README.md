@@ -1,4 +1,5 @@
 Ticketing System
-<img width="1213" height="699" alt="image" src="https://github.com/user-attachments/assets/45e60414-23d0-4f32-b8c0-4836ba9cfc97" />
+<img width="1082" height="667" alt="image" src="https://github.com/user-attachments/assets/99d11b6d-e854-4ec8-9abe-5a4adfad81a1" />
+
 
 
