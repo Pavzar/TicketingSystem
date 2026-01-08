@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: orderservice
+  datasource:
+    url: "jdbc:mysql://localhost:3306/ticketing"
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: order-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            type:
+              mapping:
+                bookingEvent:com.myproject.pavzar.bookingservice.event.BookingEvent
+inventory:
+  service:
+    url: "http://localhost:8080/api/v1/inventory"
+server:
+  port: 8082

@@ -7,12 +7,14 @@ import com.myproject.pavzar.inventoryservice.repository.VenueRepository;
 import com.myproject.pavzar.inventoryservice.response.EventInventoryResponse;
 import com.myproject.pavzar.inventoryservice.response.VenueInventoryResponse;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class InventoryService {
 
     private final EventRepository eventRepository;
@@ -55,4 +57,10 @@ public class InventoryService {
                 .build();
     }
 
+    public void updateEventCapacity(Long eventId, Integer ticketsBooked) {
+        Event event = eventRepository.findById(eventId).orElseThrow(() -> new EntityNotFoundException("Event not found: " + eventId));
+        event.setLeftCapacity(event.getLeftCapacity() - ticketsBooked);
+        eventRepository.saveAndFlush(event);
+        log.info("Updated event capacity for event id: {} with tickets booked: {}", eventId, ticketsBooked);
+    }
 }
