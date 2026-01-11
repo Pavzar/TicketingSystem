@@ -59,7 +59,12 @@ public class InventoryService {
 
     public void updateEventCapacity(Long eventId, Integer ticketsBooked) {
         Event event = eventRepository.findById(eventId).orElseThrow(() -> new EntityNotFoundException("Event not found: " + eventId));
-        event.setLeftCapacity(event.getLeftCapacity() - ticketsBooked);
+        if(event.getLeftCapacity() >= ticketsBooked){
+            event.setLeftCapacity(event.getLeftCapacity() - ticketsBooked);
+        } else {
+            throw new RuntimeException("Not enough inventory");
+        }
+
         eventRepository.saveAndFlush(event);
         log.info("Updated event capacity for event id: {} with tickets booked: {}", eventId, ticketsBooked);
     }

@@ -18,6 +18,4 @@ public class InventoryServiceClient {
 
         return ResponseEntity.ok().build();
     }
-
-
 }
