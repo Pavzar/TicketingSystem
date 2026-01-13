@@ -42,6 +42,21 @@ A compact **event ticketing** backend built with **Spring Boot 3 / Java 21** tha
 - SpringDoc OpenAPI / Swagger UI
 - Keycloak for JWT auth at the gateway
 
+
+## Security (Keycloak / JWT)
+
+The gateway is configured as an **OAuth2 Resource Server** and (by default) protects all routes except docs.
+
+## Project structure
+
+```
+.
+├── apigateway/          # Gateway routes + security + aggregated Swagger UI
+├── inventoryservice/    # Inventory REST API + Flyway migrations + docker-compose infra
+├── bookingservice/      # Booking REST API + Kafka producer
+└── orderservice/        # Kafka consumer + persistence + inventory update call
+```
+
 ## API docs (Swagger)
 
 - Aggregated Swagger UI (gateway): **http://localhost:8090/swagger-ui.html**
