@@ -32,12 +32,12 @@ A compact **event ticketing** backend built with **Spring Boot 3 / Java 21** tha
 
 ## Tech stack
 
-- Java **21**
-- Spring Boot **3.4.x**
-- Spring Cloud **2024.0.0** (Gateway MVC)
-- Spring Data JPA (Hibernate) + **MySQL 8**
-- **Flyway** DB migrations (Inventory service)
-- **Kafka** (Confluent images) + Kafka UI
+- Java 21
+- Spring Boot 3.4.x
+- Spring Cloud 2024.0.0 (Gateway)
+- Spring Data JPA (Hibernate) + MySQL 8
+- Flyway DB migrations (Inventory service)
+- Kafka (Confluent images) + Kafka UI
 - Resilience4j (circuit breaker)
 - SpringDoc OpenAPI / Swagger UI
 - Keycloak for JWT auth at the gateway
