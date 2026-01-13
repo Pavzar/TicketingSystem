@@ -52,7 +52,7 @@ The gateway exposes each service’s OpenAPI docs under:
 - `/docs/inventoryservice/v3/api-docs`
 - `/docs/bookingservice/v3/api-docs`
 
-## System Diagram
+## Diagram
 
 <img width="1082" height="667" alt="image" src="https://github.com/user-attachments/assets/99d11b6d-e854-4ec8-9abe-5a4adfad81a1" />
 
