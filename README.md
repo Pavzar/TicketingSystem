@@ -42,6 +42,17 @@ A compact **event ticketing** backend built with **Spring Boot 3 / Java 21** tha
 - SpringDoc OpenAPI / Swagger UI
 - Keycloak for JWT auth at the gateway
 
+## API docs (Swagger)
+
+- Aggregated Swagger UI (gateway): **http://localhost:8090/swagger-ui.html**
+- Inventory Swagger UI: **http://localhost:8080/swagger-ui.html**
+- Booking Swagger UI: **http://localhost:8081/swagger-ui.html**
+
+The gateway exposes each service’s OpenAPI docs under:
+- `/docs/inventoryservice/v3/api-docs`
+- `/docs/bookingservice/v3/api-docs`
+
+## System Diagram
 
 <img width="1082" height="667" alt="image" src="https://github.com/user-attachments/assets/99d11b6d-e854-4ec8-9abe-5a4adfad81a1" />
 
