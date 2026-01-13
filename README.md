@@ -6,9 +6,9 @@ A compact **event ticketing** backend built with **Spring Boot 3 / Java 21** tha
 
 - **API Gateway** (Spring Cloud Gateway)
   - Central entrypoint + route definitions
-  - **JWT Resource Server** security (Keycloak-ready)
-  - **Resilience4j** circuit breaker + Actuator health
-  - **Swagger UI**
+  - JWT Resource Server security (Keycloak-ready)
+  - Resilience4j circuit breaker + Actuator health
+  - Swagger UI
 - **Inventory Service**
   - Stores venues & events in MySQL (Flyway migrations)
   - Exposes read endpoints for venue/event inventory
