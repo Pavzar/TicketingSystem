@@ -10,6 +10,8 @@ import org.springframework.web.servlet.function.RouterFunction;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
+import static org.springframework.cloud.gateway.server.mvc.filter.FilterFunctions.setPath;
+
 @Configuration
 public class InventoryServiceRoutes {
 
@@ -43,5 +45,14 @@ public class InventoryServiceRoutes {
         String value1 = request.pathVariable(pathVariable1);
         String value2 = request.pathVariable(pathVariable2);
         return HandlerFunctions.http(baseUrl + value1 + "/capacity/" + value2).handle(request);
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> inventoryServiceApiDocs() {
+        return GatewayRouterFunctions.route("inventory-service-api-docs")
+                .route(RequestPredicates.path("/docs/inventoryservice/v3/api-docs"),
+                        HandlerFunctions.http("http://localhost:8080"))
+                .filter(setPath("/v3/api-docs"))
+                .build();
     }
 }

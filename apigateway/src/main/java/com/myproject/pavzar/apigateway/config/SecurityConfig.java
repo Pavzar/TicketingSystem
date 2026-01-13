@@ -14,12 +14,22 @@ public class SecurityConfig {
     @Value("${keycloak.auth.jwk-set-uri}")
     String jwtSetUri;
 
+
+    @Value("${security.excluded.urls}")
+    private String[] excludedUrls;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(authorizeRequests ->
-                authorizeRequests.anyRequest().authenticated()).oauth2ResourceServer(oauth2ResourceServer ->
-                oauth2ResourceServer.jwt(Customizer.withDefaults())).build();
+                        authorizeRequests
+                                .requestMatchers(excludedUrls)
+                                .permitAll()
+                                .anyRequest().authenticated())
+                .oauth2ResourceServer(oauth ->
+                        oauth.jwt(Customizer.withDefaults()))
+                .build();
     }
+
 
     @Bean
     public JwtDecoder jwtDecoder() {
