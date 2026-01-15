@@ -50,7 +50,6 @@ The gateway is configured as an **OAuth2 Resource Server** and (by default) prot
 ## Project structure
 
 ```
-.
 ├── apigateway/          # Gateway routes + security + aggregated Swagger UI
 ├── inventoryservice/    # Inventory REST API + Flyway migrations + docker-compose infra
 ├── bookingservice/      # Booking REST API + Kafka producer
