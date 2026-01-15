@@ -20,6 +20,10 @@ A compact **event ticketing** backend built with **Spring Boot 3 / Java 21** tha
   - Consumes `BookingEvent` from Kafka
   - Persists the order and calls Inventory to decrement capacity
 
+## Diagram
+
+<img width="1082" height="667" alt="image" src="https://github.com/user-attachments/assets/99d11b6d-e854-4ec8-9abe-5a4adfad81a1" />
+
 ## Services
 
 | Service | Purpose | Default port |
@@ -65,10 +69,6 @@ The gateway is configured as an **OAuth2 Resource Server** and (by default) prot
 The gateway exposes each service’s OpenAPI docs under:
 - `/docs/inventoryservice/v3/api-docs`
 - `/docs/bookingservice/v3/api-docs`
-
-## Diagram
-
-<img width="1082" height="667" alt="image" src="https://github.com/user-attachments/assets/99d11b6d-e854-4ec8-9abe-5a4adfad81a1" />
 
 
 
